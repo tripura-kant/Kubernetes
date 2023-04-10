@@ -49,13 +49,21 @@ STEP-2: Validate the Deployment:
 --------------------------------
 a. Display "nginx-deploy" deployment. Ensure Container Image version is nginx "1.18"
 
+kubectl get deploy nginx-deploy -o wide
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+nginx-deploy   4/4     4            4           98s   nginx        nginx:1.18   app=nginx-deploy
+
 
 ***************************************************************************************************
 
 STEP-3: Upgrading Deployment with new Image:
 --------------------------------------------
 a. Upgrade "nginx-deploy" deployment nginx version from 1.18 to 1.91 using "..set image..." command with "record" option on
+kubectl set image deploy nginx-deploy nginx=nginx:1.91 --record
+
 b. Wait for a minute and display roll-out status of "nginx-deploy" deployment.
+kubectl rollout status deployment/nginx-deploy
+
 c. In case if it is "stuck", then display "roll-out history" of "nginx-deploy" deployment. 
 d. Identify Issue
 
