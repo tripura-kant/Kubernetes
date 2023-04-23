@@ -1,0 +1,6 @@
+# Persistent volume and persistent claim
+
+kubectl create -f https://raw.githubusercontent.com/Sonal0409/Container-Orchestration-using-Kubernetes/main/Day%203%20-%20Notes/Networking/storage/pv.yml
+
+
+kubectl create -f https://raw.githubusercontent.com/Sonal0409/Container-Orchestration-using-Kubernetes/main/Day%203%20-%20Notes/Networking/storage/pvc.yml
