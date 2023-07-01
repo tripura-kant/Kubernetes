@@ -1,0 +1,5 @@
+# Create a namespace finance and Create a network policy that blocks all traffic to pods in 
+# finance namespace except for pods in same namespace and port 8080.
+
+
+  
