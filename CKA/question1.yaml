@@ -1,1 +1,7 @@
-# This is file question1.yaml
+# This is file question1.yam
+
+# write a command to list all pod in all namespaces sorted by age in ascending order
+
+
+# solution
+kubectl get pods -A --sort-by=.metadata.creationTimestamp | tac
