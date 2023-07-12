@@ -1,5 +1,4 @@
-import os
 for i in range(1, 50):
-    file_name = f"question{i}"
+    file_name = f"question{i}.yaml"
     with open(file_name, "w") as file:
-        os.remove("# This is file " + file_name)
+        file.write("# This is file " + file_name)
