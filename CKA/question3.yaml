@@ -1,0 +1,18 @@
+# This is file question3.yaml
+
+# This is file question3
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod-multi
+  name: pod-multi
+spec:
+  containers:
+  - image: nginx
+    name: container-1
+  - image: busybox
+    name: container-2    
+    command: ["sleep", "4800"]
+    

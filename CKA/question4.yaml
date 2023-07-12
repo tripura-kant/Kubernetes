@@ -1,0 +1,22 @@
+# This is file question4.yaml
+# This is file question4
+
+# Create a pod 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: dev
+    tier: front
+  name: delta-pod
+  namespace: defence
+spec:
+  containers:
+  - image: nginx:1.17
+    name: delta-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

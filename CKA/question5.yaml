@@ -1,0 +1,15 @@
+# This is file question5.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    env: dev
+    tier: front
+  name: delta-pod
+  namespace: defence
+spec:
+  containers:
+  - image: nginx:1.17
+    name: delta-pod
+

@@ -1,0 +1,11 @@
+# static pod '
+# should be kept in /etc/kubernetes/manifests
+
+apiVersion: v1
+kind: Pod 
+metadata:
+    name: static-nginx 
+spec:
+    containers:
+    - name: nginx-container
+      image: nginx
