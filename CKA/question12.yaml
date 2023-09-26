@@ -1,1 +1,6 @@
 # This is file question12.yaml
+
+kubectl rollout resume deployment black-cka25-trb
+
+listing the deployments, we are currently seeing 0 under the UP-TO-DATE section for this deployment. Troubleshoot, fix and make sure that this deployment is up to date.
+

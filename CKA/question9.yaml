@@ -1,1 +1,3 @@
 # This is file question9.yaml
+
+kubectl --context cluster1 get service service-cka25-arch -o jsonpath='{.spec.ports[0].targetPort}'

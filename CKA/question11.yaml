@@ -1,1 +1,33 @@
 # This is file question11.yaml
+
+change the image name and also mount path 
+
+kubectl get pod nginx-cka01-trb -o yaml
+Under containers: check the command: section, this is the command which is failing. If you notice its looking for the logs under /var/log/httpd/ directory but the mounted volume for logs is /var/log/nginx (under volumeMounts:). So we need to fix this path:
+
+kubectl get pod nginx-cka01-trb -o yaml > /tmp/test.yaml
+vi /tmp/test.yaml
+Under command: change /var/log/httpd/access.log and /var/log/httpd/error.log to /var/log/nginx/access.log and /var/log/nginx/error.log respectively.
+
+Delete the existing POD now:
+
+kubectl delete pod nginx-cka01-trb
+Create new one from the template
+
+kubectl apply -f /tmp/test.yaml
+Let's check now if the POD is in Running state
+
+kubectl get pod
+It should be good now. So let's try to access the app.
+
+curl http://kodekloud-exam.app:30001
+You will see error
+
+curl: (7) Failed to connect to kodekloud-exam.app port 30001: Connection refused
+So you are not able to access the website, et's look into the service configuration.
+
+Edit the service
+kubectl edit svc nginx-service-cka01-trb -o yaml 
+Change app label under selector from httpd-app-cka01-trb to nginx-app-cka01-trb
+You should be able to access the website now.
+curl http://kodekloud-exam.app:30001

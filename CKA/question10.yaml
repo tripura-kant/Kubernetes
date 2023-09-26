@@ -1,1 +1,9 @@
 # This is file question10.yaml
+
+Trobleshooting questions
+kubectl get ingress
+kubectl edit ingress nodeapp-ing-cka08-trb
+Under rules: -> host: change example.com to kodekloud-ingress.app
+Under backend: -> service: -> name: Change example-service to nodeapp-svc-cka08-trb
+Change port: -> number: from 80 to 3000
+You should be able to access the app using curl http://kodekloud-ingress.app command now.

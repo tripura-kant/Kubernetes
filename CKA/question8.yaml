@@ -1,1 +1,5 @@
 # This is file question8.yaml
+# This is file question8.yaml
+student-node ~ ➜ kubectl --context cluster1 create serviceaccount pink-sa-cka24-arch
+student-node ~ ➜ kubectl --context cluster1 create clusterrole pink-role-cka24-arch --resource=* --verb=*
+student-node ~ ➜ kubectl --context cluster1 create clusterrolebinding pink-role-binding-cka24-arch --clusterrole=pink-role-cka24-arch --serviceaccount=default:pink-sa-cka24-arch  

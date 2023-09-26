@@ -1,1 +1,4 @@
 # This is file question16.yaml
+
+for i in range(100):
+  print(i)

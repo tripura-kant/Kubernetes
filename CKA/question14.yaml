@@ -1,1 +1,14 @@
-# This is file question14.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: payroll-policy
+  namespace: accounting
+spec:
+  podSelector: 
+    matchLabels:
+      app: payroll
+  policyTypes:
+  - Ingress
+  - Egress
+
